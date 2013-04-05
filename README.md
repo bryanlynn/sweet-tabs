@@ -1,4 +1,4 @@
-Sweet Tabs - (Sweet HTML Tabs)
+<h1>Sweet Tabs - (Sweet HTML Tabs)</h1>
 
 <p>This code supports IE7, IE8, Chrome, and Firefox.</p>
 
