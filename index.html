@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sweet Tabs</title>
+<style>
+/*Sweet TABS*/
+#btabs {
+border-bottom: 1px solid #CCC;
+width: 640px;
+margin-left:-10px!important!;  
+padding-left:35px!important!;  
+}
+
+#btabs a{
+color: #00AAE0;
+text-decoration: none; 
+font-weight: bold;  
+}
+
+
+#btabs li {
+display: inline-block;
+padding-right: 12px;
+border-top: 1px solid #CCC;
+margin-left: -15px;
+padding-left: 12px;
+border-right: 1px solid #CCC;
+padding-top: 8px;
+padding-bottom: 8px;
+margin-right: 11px;
+zoom: 1;
+*display: inline;  
+}
+
+#btabs .first{
+border-left: 1px solid #CCC;
+}  
+
+#btabs .active a{
+color:#353537; 
+  font-weight: bold;
+}
+/*end btabs*/
+
+/*demo page*/
+textarea{
+width:600px;
+height:200px;
+}
+
+</style>
+</head>
+<body>
+<div>
+<ul id="btabs">
+<li class="first active">
+<a href="phoenix.zhtml?c=119943&amp;p=irol-earningsreleases">Earnings Releases</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=irol-10q">10-Q</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=irol-10k">10-K</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=proxy">Annual Reports &amp; Proxy Statements</a></li>
+</ul>
+</div>
+<br/>
+<p>This code supports IE7, IE8, Chrome, and Firefox.</p>
+<br/>
+<h3>CSS Code</h3>
+<textarea>/*Sweet TABS*/
+#btabs {
+border-bottom: 1px solid #CCC;
+width: 640px;
+margin-left:-10px!important!;  
+padding-left:35px!important!;  
+}
+
+#btabs a{
+color: #00AAE0;
+text-decoration: none; 
+font-weight: bold;  
+}
+
+
+#btabs li {
+display: inline-block;
+padding-right: 12px;
+border-top: 1px solid #CCC;
+margin-left: -15px;
+padding-left: 12px;
+border-right: 1px solid #CCC;
+padding-top: 8px;
+padding-bottom: 8px;
+margin-right: 11px;
+zoom: 1;
+*display: inline;  
+}
+
+#btabs .first{
+border-left: 1px solid #CCC;
+}  
+
+#btabs .active a{
+color:#353537; 
+  font-weight: bold;
+}</textarea>
+
+<h3>HTML Code</h3>
+<textarea><ul id="btabs">
+<li class="first active">
+<a href="phoenix.zhtml?c=119943&amp;p=irol-earningsreleases">Earnings Releases</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=irol-10q">10-Q</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=irol-10k">10-K</a></li>
+<li><a href="phoenix.zhtml?c=119943&amp;p=proxy">Annual Reports &amp; Proxy Statements</a></li>
+</ul></textarea>
+<h3>HTML/XSL Code</h3>
+<textarea><ul id="btabs">
+        <xsl:if test="contains($pageName, 'irol-financeinfo')" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <li class="first">
+                <xsl:if test="contains($pageName, 'irol-financeinfo') and not(contains($pageName, 'irol-financeinfo11')) and not(contains($pageName, 'irol-financeinfo10')) and not(contains($pageName, 'irol-financeinfo09')) and not(contains($pageName, 'irol-financeinfo08')) and not(contains($pageName, 'irol-financeinfo07'))">
+                    <xsl:attribute name="class">first active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-financeinfo">2012</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-financeinfo11')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-financeinfo11">2011</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-financeinfo10')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-financeinfo10">2010</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-financeinfo09')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-financeinfo09">2009</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-financeinfo08')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-financeinfo08">2008</a>
+            </li>
+        </xsl:if>
+        <xsl:if test="contains($pageName, 'irol-earningsreleases') or contains($pageName, 'irol-10k') or contains($pageName, 'irol-10q') or contains($pageName, 'proxy')" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <li class="first">
+                <xsl:if test="contains($pageName, 'irol-earningsreleases')">
+                    <xsl:attribute name="class">first active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-earningsreleases">Earnings Releases</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-10q')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-10q">10-Q</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'irol-10k')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=irol-10k">10-K</a>
+            </li>
+            <li>
+                <xsl:if test="contains($pageName, 'proxy')">
+                    <xsl:attribute name="class">active</xsl:attribute>
+                </xsl:if>
+                <a href="phoenix.zhtml?c=119943&amp;p=proxy">Annual Reports &amp; Proxy Statements</a>
+            </li>
+        </xsl:if></textarea>
+
+</body>
+</html>
